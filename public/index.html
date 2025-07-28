@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Humanizer</title> 
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    </head>
+
+    <body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖➡️🧑 AI Text Humanizer</h1>
+            <p>Transform AI-generated content into natural, human-like text</p>
+        </div>
+
+        <div class="main-content">
+            <div class="controls">
+                <div class="control-group">
+                    <label for="toneSelect">Writing Tone:</label>
+                    <select id="toneSelect">
+                        <option value="conversational">Conversational</option>
+                        <option value="professional">Professional</option>
+                        <option value="casual">Casual</option>
+                        <option value="academic">Academic</option>
+                        <option value="creative">Creative</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="styleSelect">Writing Style:</label>
+                    <select id="styleSelect">
+                        <option value="balanced">Balanced</option>
+                        <option value="formal">Formal</option>
+                        <option value="informal">Informal</option>
+                        <option value="technical">Technical</option>
+                        <option value="storytelling">Storytelling</option>
+                    </select>
+                </div>
+
+                <button class="humanize-btn" onclick="humanizeText()">
+                    ✨ Humanize Text
+                </button>
+            </div>
+
+            <div class="text-areas">
+                <div class="text-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Original AI Text</h3>
+                        <div class="percentage-badge ai-badge" id="aiPercentage">AI: 85%</div>
+                    </div>
+                    <textarea id="originalText" placeholder="Paste your AI-generated text here..."></textarea>
+                </div>
+
+                <div class="text-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Humanized Version</h3>
+                        <div class="percentage-badge human-badge" id="humanPercentage">Human: 15%</div>
+                    </div>
+                    <textarea id="humanizedText" placeholder="Humanized text will appear here..." readonly></textarea>
+                </div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                Processing your text...
+            </div>
+
+            <div class="suggestions" id="suggestions" style="display: none;">
+                <h3>💡 Humanization Suggestions Applied:</h3>
+                <div id="suggestionsList"></div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
